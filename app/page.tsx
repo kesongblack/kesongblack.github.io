@@ -2,6 +2,26 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { Code2, Database, Wrench } from "lucide-react";
+
+const techStack = {
+  frontend: [
+    { name: "Next.js", description: "Learning through portfolio and client projects" },
+    { name: "Vue 3", description: "Frontend component development" },
+    { name: "Tailwind CSS", description: "Rapid UI development with utility-first approach" },
+    { name: "shadcn/ui", description: "Accessible component library" },
+  ],
+  backend: [
+    { name: "Laravel", description: "REST API development, business logic, 3+ years" },
+    { name: "MySQL", description: "Database design and optimization" },
+    { name: "REST API", description: "API design and implementation" },
+  ],
+  tools: [
+    { name: "Git", description: "Version control and collaboration" },
+    { name: "TypeScript", description: "Type-safe JavaScript development" },
+    { name: "Docker", description: "Containerization for development" },
+  ],
+};
 
 export default function Home() {
   return (
@@ -28,23 +48,49 @@ export default function Home() {
       {/* SKILLS */}
       <section id="skills" className="space-y-6">
         <h2 className="text-3xl font-semibold text-center">Tech Stack</h2>
-        <div className="grid md:grid-cols-2 gap-6 mt-6">
+        <div className="grid md:grid-cols-3 gap-6 mt-6">
           <Card className="p-6">
-            <h3 className="font-medium mb-2">Frontend</h3>
-            <div className="flex flex-wrap gap-2">
-              <Badge>Next.js</Badge>
-              <Badge>Vue 3</Badge>
-              <Badge>Tailwind</Badge>
-              <Badge>shadcn/ui</Badge>
+            <div className="flex items-center gap-2 mb-4">
+              <Code2 className="w-5 h-5 text-blue-500" />
+              <h3 className="font-semibold">Frontend</h3>
+            </div>
+            <div className="space-y-3">
+              {techStack.frontend.map((tech) => (
+                <div key={tech.name}>
+                  <p className="font-medium">{tech.name}</p>
+                  <p className="text-sm text-muted-foreground">{tech.description}</p>
+                </div>
+              ))}
             </div>
           </Card>
 
           <Card className="p-6">
-            <h3 className="font-medium mb-2">Backend</h3>
-            <div className="flex flex-wrap gap-2">
-              <Badge>Laravel</Badge>
-              <Badge>REST API</Badge>
-              <Badge>MySQL</Badge>
+            <div className="flex items-center gap-2 mb-4">
+              <Database className="w-5 h-5 text-green-500" />
+              <h3 className="font-semibold">Backend</h3>
+            </div>
+            <div className="space-y-3">
+              {techStack.backend.map((tech) => (
+                <div key={tech.name}>
+                  <p className="font-medium">{tech.name}</p>
+                  <p className="text-sm text-muted-foreground">{tech.description}</p>
+                </div>
+              ))}
+            </div>
+          </Card>
+
+          <Card className="p-6">
+            <div className="flex items-center gap-2 mb-4">
+              <Wrench className="w-5 h-5 text-gray-500" />
+              <h3 className="font-semibold">Tools</h3>
+            </div>
+            <div className="space-y-3">
+              {techStack.tools.map((tech) => (
+                <div key={tech.name}>
+                  <p className="font-medium">{tech.name}</p>
+                  <p className="text-sm text-muted-foreground">{tech.description}</p>
+                </div>
+              ))}
             </div>
           </Card>
         </div>
