@@ -3,6 +3,8 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Code2, Database, Wrench } from "lucide-react";
+import { getAllProjects, getAllJourneyPosts } from "@/lib/mdx";
+import Link from "next/link";
 
 const techStack = {
   frontend: [
@@ -23,7 +25,10 @@ const techStack = {
   ],
 };
 
-export default function Home() {
+export default async function Home() {
+  const projects = await getAllProjects();
+  const journeyPosts = await getAllJourneyPosts();
+
   return (
     <main className="max-w-6xl mx-auto px-6 py-16 space-y-32">
 
