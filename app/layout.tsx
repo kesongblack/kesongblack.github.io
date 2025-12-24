@@ -1,5 +1,6 @@
 import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
+import 'highlight.js/styles/github-dark.css';
 
 export const metadata = {
   title: "DevTech Portfolio",
