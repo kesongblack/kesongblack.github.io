@@ -107,21 +107,38 @@ export default async function Home() {
       <section id="projects" className="space-y-6">
         <h2 className="text-3xl font-semibold text-center">Projects</h2>
         <div className="grid md:grid-cols-2 gap-6 mt-6">
-          <Card className="p-6 space-y-4">
-            <h3 className="text-xl font-semibold">Project Subay</h3>
-            <p className="text-sm text-muted-foreground">
-              A document tracking system for office workflows.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <Badge>Laravel</Badge>
-              <Badge>Next.js</Badge>
-            </div>
-            <div className="flex gap-3 mt-2">
-              <Button size="sm">Live Demo</Button>
-              <Button size="sm" variant="outline">Source</Button>
-            </div>
-          </Card>
+          {projects.map((project) => (
+            <Card key={project.slug} className="p-6 space-y-4">
+              <h3 className="text-xl font-semibold">{project.title}</h3>
+              <p className="text-sm text-muted-foreground">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {project.tech.map((tech) => (
+                  <Badge key={tech}>{tech}</Badge>
+                ))}
+              </div>
+              <div className="flex gap-3 mt-2">
+                <Button asChild size="sm">
+                  <Link href={`/projects/${project.slug}`}>Read Case Study</Link>
+                </Button>
+                {project.liveUrl && (
+                  <Button asChild size="sm" variant="outline">
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                      Live Demo
+                    </a>
+                  </Button>
+                )}
+              </div>
+            </Card>
+          ))}
         </div>
+
+        {projects.length === 0 && (
+          <p className="text-center text-muted-foreground">
+            No projects yet. Check back soon!
+          </p>
+        )}
       </section>
 
       <Separator />
