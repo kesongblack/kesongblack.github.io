@@ -9,13 +9,17 @@ export default function Home() {
 
       {/* HERO / ABOUT */}
       <section id="about" className="text-center space-y-4">
-        <h1 className="text-5xl font-bold">Hi, I’m DevTech 👋</h1>
+        <h1 className="text-5xl font-bold">Hi, I'm Kris 👋</h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Full Stack Developer building practical systems using Laravel, Next.js, and modern UI frameworks.
+          I solve technical problems, build applications, and document what I learn along the way.
         </p>
         <div className="flex justify-center gap-4 mt-6">
-          <Button>View Projects</Button>
-          <Button variant="outline">Read My Journey</Button>
+          <Button asChild>
+            <a href="#projects">View Projects</a>
+          </Button>
+          <Button asChild variant="outline">
+            <a href="#journey">Read My Journey</a>
+          </Button>
         </div>
       </section>
 
