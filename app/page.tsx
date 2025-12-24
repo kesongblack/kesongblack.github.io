@@ -9,7 +9,7 @@ export default function Home() {
 
       {/* HERO / ABOUT */}
       <section id="about" className="text-center space-y-4">
-        <h1 className="text-5xl font-bold">Hi, I'm Kris 👋</h1>
+        <h1 className="text-5xl font-bold">Hi, I&apos;m Kris 👋</h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           I solve technical problems, build applications, and document what I learn along the way.
         </p>
