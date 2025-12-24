@@ -145,18 +145,32 @@ export default async function Home() {
 
       {/* JOURNEY */}
       <section id="journey" className="space-y-6">
-        <h2 className="text-3xl font-semibold text-center">Project Journey</h2>
+        <h2 className="text-3xl font-semibold text-center">Journey</h2>
         <p className="text-center text-muted-foreground">
           Documenting what I learned, challenges I faced, and how I grew as a developer.
         </p>
         <div className="grid md:grid-cols-2 gap-6 mt-6">
-          {/* Placeholder cards for Markdown-driven entries */}
-          <Card className="p-6 space-y-2">
-            <h3 className="font-medium">Learning Next.js</h3>
-            <p className="text-sm text-muted-foreground">Built static portfolio pages with markdown-driven content.</p>
-            <Button size="sm">Read More</Button>
-          </Card>
+          {journeyPosts.map((post) => (
+            <Card key={post.slug} className="p-6 space-y-2">
+              <h3 className="font-semibold">{post.title}</h3>
+              <p className="text-sm text-muted-foreground">{post.excerpt}</p>
+              <div className="flex flex-wrap gap-2 mt-2">
+                {post.tags.map((tag) => (
+                  <Badge key={tag} variant="outline">{tag}</Badge>
+                ))}
+              </div>
+              <Button asChild size="sm" className="mt-4">
+                <Link href={`/journey/${post.slug}`}>Read More</Link>
+              </Button>
+            </Card>
+          ))}
         </div>
+
+        {journeyPosts.length === 0 && (
+          <p className="text-center text-muted-foreground">
+            No journey posts yet. Check back soon!
+          </p>
+        )}
       </section>
 
       <Separator />
