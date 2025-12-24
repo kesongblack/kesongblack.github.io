@@ -1,65 +1,105 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="max-w-6xl mx-auto px-6 py-16 space-y-32">
+
+      {/* HERO / ABOUT */}
+      <section id="about" className="text-center space-y-4">
+        <h1 className="text-5xl font-bold">Hi, I’m DevTech 👋</h1>
+        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          Full Stack Developer building practical systems using Laravel, Next.js, and modern UI frameworks.
+        </p>
+        <div className="flex justify-center gap-4 mt-6">
+          <Button>View Projects</Button>
+          <Button variant="outline">Read My Journey</Button>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <Separator />
+
+      {/* SKILLS */}
+      <section id="skills" className="space-y-6">
+        <h2 className="text-3xl font-semibold text-center">Tech Stack</h2>
+        <div className="grid md:grid-cols-2 gap-6 mt-6">
+          <Card className="p-6">
+            <h3 className="font-medium mb-2">Frontend</h3>
+            <div className="flex flex-wrap gap-2">
+              <Badge>Next.js</Badge>
+              <Badge>Vue 3</Badge>
+              <Badge>Tailwind</Badge>
+              <Badge>shadcn/ui</Badge>
+            </div>
+          </Card>
+
+          <Card className="p-6">
+            <h3 className="font-medium mb-2">Backend</h3>
+            <div className="flex flex-wrap gap-2">
+              <Badge>Laravel</Badge>
+              <Badge>REST API</Badge>
+              <Badge>MySQL</Badge>
+            </div>
+          </Card>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <Separator />
+
+      {/* PROJECTS */}
+      <section id="projects" className="space-y-6">
+        <h2 className="text-3xl font-semibold text-center">Projects</h2>
+        <div className="grid md:grid-cols-2 gap-6 mt-6">
+          <Card className="p-6 space-y-4">
+            <h3 className="text-xl font-semibold">Project Subay</h3>
+            <p className="text-sm text-muted-foreground">
+              A document tracking system for office workflows.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <Badge>Laravel</Badge>
+              <Badge>Next.js</Badge>
+            </div>
+            <div className="flex gap-3 mt-2">
+              <Button size="sm">Live Demo</Button>
+              <Button size="sm" variant="outline">Source</Button>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      <Separator />
+
+      {/* JOURNEY */}
+      <section id="journey" className="space-y-6">
+        <h2 className="text-3xl font-semibold text-center">Project Journey</h2>
+        <p className="text-center text-muted-foreground">
+          Documenting what I learned, challenges I faced, and how I grew as a developer.
+        </p>
+        <div className="grid md:grid-cols-2 gap-6 mt-6">
+          {/* Placeholder cards for Markdown-driven entries */}
+          <Card className="p-6 space-y-2">
+            <h3 className="font-medium">Learning Next.js</h3>
+            <p className="text-sm text-muted-foreground">Built static portfolio pages with markdown-driven content.</p>
+            <Button size="sm">Read More</Button>
+          </Card>
+        </div>
+      </section>
+
+      <Separator />
+
+      {/* CONTACT */}
+      <section id="contact" className="text-center space-y-4">
+        <h2 className="text-3xl font-semibold">Contact Me</h2>
+        <p className="text-muted-foreground">Feel free to reach out via GitHub, LinkedIn, or email.</p>
+        <div className="flex justify-center gap-4 mt-4">
+          <Button asChild><a href="mailto:youremail@example.com">Email</a></Button>
+          <Button asChild variant="outline"><a href="https://github.com/yourusername">GitHub</a></Button>
+          <Button asChild variant="outline"><a href="https://linkedin.com/in/yourusername">LinkedIn</a></Button>
+        </div>
+      </section>
+
+    </main>
   );
 }
