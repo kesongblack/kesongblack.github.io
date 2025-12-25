@@ -1,0 +1,71 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+
+  <!-- Accent bar -->
+  <rect x="0" y="0" width="1200" height="8" fill="url(#accentGradient)"/>
+
+  <!-- Logo -->
+  <g transform="translate(100, 180)">
+    <!-- Building icon simplified -->
+    <path d="M 0 50 L 60 10 L 120 50 Z" fill="#6a6a6a"/>
+    <rect x="0" y="50" width="120" height="80" fill="#2a2a2a"/>
+    <circle cx="30" cy="75" r="8" fill="white" opacity="0.8"/>
+    <circle cx="60" cy="85" r="6" fill="white" opacity="0.8"/>
+    <circle cx="90" cy="75" r="8" fill="white" opacity="0.8"/>
+    <circle cx="40" cy="105" r="5" fill="white" opacity="0.8"/>
+    <circle cx="80" cy="105" r="5" fill="white" opacity="0.8"/>
+  </g>
+
+  <!-- Name -->
+  <text x="250" y="260" font-family="system-ui, -apple-system, sans-serif" font-size="72" font-weight="700" fill="white">
+    Kris
+  </text>
+
+  <!-- Title -->
+  <text x="250" y="330" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="600" fill="url(#accentGradient)">
+    Full-Stack Developer
+  </text>
+
+  <!-- Description -->
+  <text x="250" y="400" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="400" fill="#cccccc">
+    Delivering production-ready applications
+  </text>
+  <text x="250" y="440" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="400" fill="#cccccc">
+    3x faster using AI-assisted workflows
+  </text>
+
+  <!-- Tech stack badges -->
+  <g transform="translate(250, 490)">
+    <rect x="0" y="0" width="110" height="40" rx="20" fill="#3b82f6" opacity="0.2"/>
+    <text x="55" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="500" fill="#3b82f6" text-anchor="middle">
+      React
+    </text>
+
+    <rect x="130" y="0" width="130" height="40" rx="20" fill="#8b5cf6" opacity="0.2"/>
+    <text x="195" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="500" fill="#8b5cf6" text-anchor="middle">
+      Next.js
+    </text>
+
+    <rect x="280" y="0" width="160" height="40" rx="20" fill="#06b6d4" opacity="0.2"/>
+    <text x="360" y="27" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="500" fill="#06b6d4" text-anchor="middle">
+      TypeScript
+    </text>
+  </g>
+
+  <!-- Website URL -->
+  <text x="250" y="590" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="400" fill="#888888">
+    kesongblack.github.io
+  </text>
+</svg>

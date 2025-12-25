@@ -5,8 +5,6 @@ import { Badge } from './ui/badge';
 
 // Custom code block component with syntax highlighting
 function CodeBlock({ children, className, ...props }: React.HTMLAttributes<HTMLElement>) {
-  const language = className?.replace('language-', '') || 'text';
-
   return (
     <pre className="rounded-lg bg-muted p-4 overflow-x-auto my-6">
       <code className={className} {...props}>

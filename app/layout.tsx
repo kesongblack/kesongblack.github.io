@@ -7,9 +7,47 @@ import { MobileNav } from "@/components/mobile-nav";
 import "highlight.js/styles/github-dark.css";
 
 export const metadata = {
+  metadataBase: new URL('https://kesongblack.github.io'),
   title: "Kris | Full-Stack Developer Portfolio",
   description:
     "Full-stack developer delivering production-ready applications 3x faster using AI-assisted workflows.",
+  keywords: ["Full-Stack Developer", "React", "Next.js", "TypeScript", "AI-Assisted Development", "Web Development", "Portfolio"],
+  authors: [{ name: "Kris", url: "https://kesongblack.github.io" }],
+  creator: "Kris",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://kesongblack.github.io",
+    siteName: "Kris | Full-Stack Developer",
+    title: "Kris | Full-Stack Developer Portfolio",
+    description: "Full-stack developer delivering production-ready applications 3x faster using AI-assisted workflows.",
+    images: [
+      {
+        url: "/images/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Kris - Full-Stack Developer Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kris | Full-Stack Developer Portfolio",
+    description: "Full-stack developer delivering production-ready applications 3x faster using AI-assisted workflows.",
+    images: ["/images/og-image.png"],
+    creator: "@kesongblack",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -30,12 +68,9 @@ export default function RootLayout({
 
           <header className="sticky top-0 z-50 bg-background/90 backdrop-blur shadow-sm border-b">
             <nav className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-              {/* <div className="font-bold text-xl">DevTech</div>
-               */}
-
               <Link href="/" className="flex items-center gap-2">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo.svg"
                   alt="KesongBlack Logo"
                   width={32}
                   height={32}

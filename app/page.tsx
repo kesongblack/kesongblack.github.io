@@ -58,8 +58,61 @@ export default async function Home() {
   const projects = await getAllProjects();
   const journeyPosts = await getAllJourneyPosts();
 
+  // Schema.org structured data
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Kris",
+    jobTitle: "Full-Stack Developer",
+    url: "https://kesongblack.github.io",
+    sameAs: [
+      "https://github.com/kesongblack"
+    ],
+    knowsAbout: [
+      "Web Development",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Laravel",
+      "PHP",
+      "AI-Assisted Development",
+      "REST APIs",
+      "MySQL",
+      "Docker"
+    ],
+    email: "kesongblack@proton.me",
+    description: "Full-stack developer delivering production-ready applications 3x faster using AI-assisted workflows."
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Kris | Full-Stack Developer Portfolio",
+    url: "https://kesongblack.github.io",
+    description: "Full-stack developer delivering production-ready applications 3x faster using AI-assisted workflows.",
+    author: {
+      "@type": "Person",
+      name: "Kris"
+    }
+  };
+
   return (
-    <main className="max-w-6xl mx-auto px-6 py-16 space-y-32">
+    <>
+      {/* Schema.org JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(personSchema)
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(websiteSchema)
+        }}
+      />
+
+      <main className="max-w-6xl mx-auto px-6 py-16 space-y-32">
       {/* HERO */}
       <section
         id="home"
@@ -324,5 +377,6 @@ export default async function Home() {
         </p>
       </footer>
     </main>
+    </>
   );
 }
