@@ -16,7 +16,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           attribute="class"
           defaultTheme="system"
           enableSystem
-          disableTransitionOnChange
           >
 
           <header className="sticky top-0 z-50 bg-background/90 backdrop-blur shadow-sm border-b">
@@ -24,11 +23,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="font-bold text-xl">DevTech</div>
             <div className="flex items-center gap-6">
               <ul className="flex gap-6">
-                <li><a href="#about" className="hover:underline">About</a></li>
-                <li><a href="#skills" className="hover:underline">Skills</a></li>
-                <li><a href="#projects" className="hover:underline">Projects</a></li>
-                <li><a href="#journey" className="hover:underline">Journey</a></li>
-                <li><a href="#contact" className="hover:underline">Contact</a></li>
+                <li><a href="#about" className="transition-colors hover:text-primary hover:underline underline-offset-4">About</a></li>
+                <li><a href="#skills" className="transition-colors hover:text-primary hover:underline underline-offset-4">Skills</a></li>
+                <li><a href="#projects" className="transition-colors hover:text-primary hover:underline underline-offset-4">Projects</a></li>
+                <li><a href="#journey" className="transition-colors hover:text-primary hover:underline underline-offset-4">Journey</a></li>
+                <li><a href="#contact" className="transition-colors hover:text-primary hover:underline underline-offset-4">Contact</a></li>
               </ul>
               <ThemeToggle />
             </div>

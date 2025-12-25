@@ -43,7 +43,7 @@ export default async function Home() {
     <main className="max-w-6xl mx-auto px-6 py-16 space-y-32">
 
       {/* HERO / ABOUT */}
-      <section id="about" className="text-center space-y-4">
+      <section id="about" className="text-center space-y-4 animate-fade-in">
         <h1 className="text-5xl font-bold">Hi, I&apos;m Kris 👋</h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           I solve technical problems, build applications, and document what I learn along the way.
@@ -61,10 +61,10 @@ export default async function Home() {
       <Separator />
 
       {/* SKILLS */}
-      <section id="skills" className="space-y-6">
+      <section id="skills" className="space-y-6 animate-fade-in animate-delay-100">
         <h2 className="text-3xl font-semibold text-center">Tech Stack</h2>
         <div className="grid md:grid-cols-3 gap-6 mt-6">
-          <Card className="p-6">
+          <Card className="p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-blue-500/50">
             <div className="flex items-center gap-2 mb-4">
               <Code2 className="w-5 h-5 text-blue-500" />
               <h3 className="font-semibold">Frontend</h3>
@@ -79,7 +79,7 @@ export default async function Home() {
             </div>
           </Card>
 
-          <Card className="p-6">
+          <Card className="p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-green-500/50">
             <div className="flex items-center gap-2 mb-4">
               <Database className="w-5 h-5 text-green-500" />
               <h3 className="font-semibold">Backend</h3>
@@ -94,7 +94,7 @@ export default async function Home() {
             </div>
           </Card>
 
-          <Card className="p-6">
+          <Card className="p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-gray-500/50">
             <div className="flex items-center gap-2 mb-4">
               <Wrench className="w-5 h-5 text-gray-500" />
               <h3 className="font-semibold">Tools</h3>
@@ -114,11 +114,11 @@ export default async function Home() {
       <Separator />
 
       {/* PROJECTS */}
-      <section id="projects" className="space-y-6">
+      <section id="projects" className="space-y-6 animate-fade-in animate-delay-200">
         <h2 className="text-3xl font-semibold text-center">Projects</h2>
         <div className="grid md:grid-cols-2 gap-6 mt-6">
           {projects.map((project) => (
-            <Card key={project.slug} className="p-6 space-y-4">
+            <Card key={project.slug} className="p-6 space-y-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary/50">
               <h3 className="text-xl font-semibold">{project.title}</h3>
               <p className="text-sm text-muted-foreground">
                 {project.description}
@@ -154,14 +154,14 @@ export default async function Home() {
       <Separator />
 
       {/* JOURNEY */}
-      <section id="journey" className="space-y-6">
+      <section id="journey" className="space-y-6 animate-fade-in animate-delay-300">
         <h2 className="text-3xl font-semibold text-center">Journey</h2>
         <p className="text-center text-muted-foreground">
           Documenting what I learned, challenges I faced, and how I grew as a developer.
         </p>
         <div className="grid md:grid-cols-2 gap-6 mt-6">
           {journeyPosts.map((post) => (
-            <Card key={post.slug} className="p-6 space-y-2">
+            <Card key={post.slug} className="p-6 space-y-2 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary/50">
               <h3 className="font-semibold">{post.title}</h3>
               <p className="text-sm text-muted-foreground">{post.excerpt}</p>
               <div className="flex flex-wrap gap-2 mt-2">
@@ -186,7 +186,7 @@ export default async function Home() {
       <Separator />
 
       {/* CONTACT */}
-      <section id="contact" className="text-center space-y-4">
+      <section id="contact" className="text-center space-y-4 animate-fade-in animate-delay-300">
         <h2 className="text-3xl font-semibold">Contact Me</h2>
         <p className="text-muted-foreground">
           Feel free to reach out via GitHub, LinkedIn, or email.
