@@ -178,11 +178,23 @@ export default async function Home() {
       {/* CONTACT */}
       <section id="contact" className="text-center space-y-4">
         <h2 className="text-3xl font-semibold">Contact Me</h2>
-        <p className="text-muted-foreground">Feel free to reach out via GitHub, LinkedIn, or email.</p>
+        <p className="text-muted-foreground">
+          Feel free to reach out via GitHub, LinkedIn, or email.
+        </p>
         <div className="flex justify-center gap-4 mt-4">
-          <Button asChild><a href="mailto:youremail@example.com">Email</a></Button>
-          <Button asChild variant="outline"><a href="https://github.com/yourusername">GitHub</a></Button>
-          <Button asChild variant="outline"><a href="https://linkedin.com/in/yourusername">LinkedIn</a></Button>
+          <Button asChild>
+            <a href="mailto:youremail@example.com">Email</a>
+          </Button>
+          <Button asChild variant="outline">
+            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+          </Button>
+          <Button asChild variant="outline">
+            <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+          </Button>
         </div>
       </section>
 
