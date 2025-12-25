@@ -42,26 +42,88 @@ export default async function Home() {
   return (
     <main className="max-w-6xl mx-auto px-6 py-16 space-y-32">
 
-      {/* HERO / ABOUT */}
-      <section id="about" className="text-center space-y-4 animate-fade-in">
-        <h1 className="text-5xl font-bold">Hi, I&apos;m Kris 👋</h1>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          I solve technical problems, build applications, and document what I learn along the way.
-        </p>
-        <div className="flex justify-center gap-4 mt-6">
-          <Button asChild>
-            <a href="#projects">View Projects</a>
+      {/* HERO */}
+      <section id="hero" className="text-center space-y-6 animate-fade-in py-12">
+        <div className="space-y-4">
+          <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
+            Ship Your MVP in Weeks, Not Months
+          </h1>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Full-stack developer delivering production-ready applications 3x faster using AI-assisted workflows.
+          </p>
+        </div>
+
+        <div className="flex justify-center gap-4 mt-8">
+          <Button asChild size="lg">
+            <a href="#projects">See Recent Work</a>
           </Button>
-          <Button asChild variant="outline">
-            <a href="#journey">Read My Journey</a>
+          <Button asChild variant="outline" size="lg">
+            <a href="#contact">Let&apos;s Talk</a>
           </Button>
         </div>
+
+        <div className="flex justify-center gap-6 mt-8 text-sm text-muted-foreground">
+          <span className="flex items-center gap-2">
+            <Badge variant="secondary">Laravel 3+ yrs</Badge>
+          </span>
+          <span className="flex items-center gap-2">
+            <Badge variant="secondary">Next.js</Badge>
+          </span>
+          <span className="flex items-center gap-2">
+            <Badge variant="secondary">2-3 week delivery</Badge>
+          </span>
+        </div>
+      </section>
+
+      {/* PROJECTS - Immediate proof after value prop */}
+      <section id="projects" className="space-y-6 animate-fade-in animate-delay-100">
+        <h2 className="text-3xl font-semibold text-center">Projects</h2>
+        <div className="grid md:grid-cols-2 gap-6 mt-6">
+          {projects.map((project) => (
+            <Card key={project.slug} className="p-6 space-y-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary/50">
+              <div className="flex justify-between items-start">
+                <h3 className="text-xl font-semibold">{project.title}</h3>
+                {project.timeline && (
+                  <Badge variant="outline" className="text-xs whitespace-nowrap">
+                    ⚡ {project.timeline}
+                  </Badge>
+                )}
+              </div>
+              <p className="text-sm text-muted-foreground">
+                {project.description}
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {project.tech.map((tech) => (
+                  <Badge key={tech}>{tech}</Badge>
+                ))}
+              </div>
+              <div className="flex gap-3 mt-2">
+                <Button asChild size="sm">
+                  <Link href={`/projects/${project.slug}`}>Read Case Study</Link>
+                </Button>
+                {project.liveUrl && (
+                  <Button asChild size="sm" variant="outline">
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                      Live Demo
+                    </a>
+                  </Button>
+                )}
+              </div>
+            </Card>
+          ))}
+        </div>
+
+        {projects.length === 0 && (
+          <p className="text-center text-muted-foreground">
+            No projects yet. Check back soon!
+          </p>
+        )}
       </section>
 
       <Separator />
 
-      {/* SKILLS */}
-      <section id="skills" className="space-y-6 animate-fade-in animate-delay-100">
+      {/* TECH STACK */}
+      <section id="skills" className="space-y-6 animate-fade-in animate-delay-200">
         <h2 className="text-3xl font-semibold text-center">Tech Stack</h2>
         <div className="grid md:grid-cols-3 gap-6 mt-6">
           <Card className="p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-blue-500/50">
@@ -109,46 +171,6 @@ export default async function Home() {
             </div>
           </Card>
         </div>
-      </section>
-
-      <Separator />
-
-      {/* PROJECTS */}
-      <section id="projects" className="space-y-6 animate-fade-in animate-delay-200">
-        <h2 className="text-3xl font-semibold text-center">Projects</h2>
-        <div className="grid md:grid-cols-2 gap-6 mt-6">
-          {projects.map((project) => (
-            <Card key={project.slug} className="p-6 space-y-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary/50">
-              <h3 className="text-xl font-semibold">{project.title}</h3>
-              <p className="text-sm text-muted-foreground">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {project.tech.map((tech) => (
-                  <Badge key={tech}>{tech}</Badge>
-                ))}
-              </div>
-              <div className="flex gap-3 mt-2">
-                <Button asChild size="sm">
-                  <Link href={`/projects/${project.slug}`}>Read Case Study</Link>
-                </Button>
-                {project.liveUrl && (
-                  <Button asChild size="sm" variant="outline">
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      Live Demo
-                    </a>
-                  </Button>
-                )}
-              </div>
-            </Card>
-          ))}
-        </div>
-
-        {projects.length === 0 && (
-          <p className="text-center text-muted-foreground">
-            No projects yet. Check back soon!
-          </p>
-        )}
       </section>
 
       <Separator />

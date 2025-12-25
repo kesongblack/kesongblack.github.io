@@ -7,6 +7,7 @@ export interface ProjectFrontmatter {
   date: string;
   liveUrl?: string;
   sourceUrl?: string;
+  timeline?: string;
 }
 
 // Journey post frontmatter schema
