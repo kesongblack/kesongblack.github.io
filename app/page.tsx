@@ -6,22 +6,21 @@ import { Code2, Database, Wrench } from "lucide-react";
 import { getAllProjects, getAllJourneyPosts } from "@/lib/mdx";
 import Link from "next/link";
 
-const techStack = {
-  frontend: [
-    { name: "Next.js", description: "Learning through portfolio and client projects" },
-    { name: "Vue 3", description: "Frontend component development" },
-    { name: "Tailwind CSS", description: "Rapid UI development with utility-first approach" },
-    { name: "shadcn/ui", description: "Accessible component library" },
+const skills = {
+  development: [
+    { name: "Next.js", description: "Modern React framework for production apps" },
+    { name: "Laravel", description: "PHP framework, 3+ years building REST APIs" },
+    { name: "TypeScript", description: "Type-safe development for maintainable code" },
   ],
-  backend: [
-    { name: "Laravel", description: "REST API development, business logic, 3+ years" },
-    { name: "MySQL", description: "Database design and optimization" },
-    { name: "REST API", description: "API design and implementation" },
+  workflow: [
+    { name: "AI Pair Programming", description: "Claude & Copilot for 3x faster development" },
+    { name: "Documentation", description: "Clear READMEs, API docs, inline comments" },
+    { name: "Git Workflows", description: "Clean commits, code review, collaboration" },
   ],
-  tools: [
-    { name: "Git", description: "Version control and collaboration" },
-    { name: "TypeScript", description: "Type-safe JavaScript development" },
-    { name: "Docker", description: "Containerization for development" },
+  infrastructure: [
+    { name: "MySQL", description: "Database design and query optimization" },
+    { name: "Docker", description: "Containerized development environments" },
+    { name: "REST APIs", description: "Design, implementation, and integration" },
   ],
 };
 
@@ -43,13 +42,13 @@ export default async function Home() {
     <main className="max-w-6xl mx-auto px-6 py-16 space-y-32">
 
       {/* HERO */}
-      <section id="hero" className="text-center space-y-6 animate-fade-in py-12">
+      <section id="about" className="text-center space-y-6 animate-fade-in py-12 scroll-mt-20">
         <div className="space-y-4">
           <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
             Ship Your MVP in Weeks, Not Months
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Full-stack developer delivering production-ready applications 3x faster using AI-assisted workflows.
+            Full-stack developer delivering production-ready applications 3x faster using AI-assisted workflows—without sacrificing quality or documentation.
           </p>
         </div>
 
@@ -76,8 +75,12 @@ export default async function Home() {
       </section>
 
       {/* PROJECTS - Immediate proof after value prop */}
-      <section id="projects" className="space-y-6 animate-fade-in animate-delay-100 scroll-mt-20">
+      <section id="projects" className="space-y-6 animate-fade-in animate-delay-100 scroll-mt-20 scroll-mt-20">
+        <Separator />
         <h2 className="text-3xl font-semibold text-center">Projects</h2>
+        <p className="text-center text-muted-foreground">
+          Real applications built fast, from concept to production.
+        </p>
         <div className="grid md:grid-cols-2 gap-6 mt-6">
           {projects.map((project) => (
             <Card key={project.slug} className="p-6 space-y-4 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary/50">
@@ -120,22 +123,24 @@ export default async function Home() {
         )}
       </section>
 
-      <Separator id="skills" className="scroll-mt-20" />
-
-      {/* TECH STACK */}
-      <section className="space-y-6 animate-fade-in animate-delay-200">
-        <h2 className="text-3xl font-semibold text-center">Tech Stack</h2>
+      {/* SKILLS & APPROACH */}
+      <section id="skills" className="space-y-6 animate-fade-in animate-delay-200 scroll-mt-20">
+        <Separator />
+        <h2 className="text-3xl font-semibold text-center">Skills & Approach</h2>
+        <p className="text-center text-muted-foreground">
+          How I deliver fast without sacrificing quality or maintainability.
+        </p>
         <div className="grid md:grid-cols-3 gap-6 mt-6">
           <Card className="p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-blue-500/50">
             <div className="flex items-center gap-2 mb-4">
               <Code2 className="w-5 h-5 text-blue-500" />
-              <h3 className="font-semibold">Frontend</h3>
+              <h3 className="font-semibold">Development</h3>
             </div>
             <div className="space-y-3">
-              {techStack.frontend.map((tech) => (
-                <div key={tech.name}>
-                  <p className="font-medium">{tech.name}</p>
-                  <p className="text-sm text-muted-foreground">{tech.description}</p>
+              {skills.development.map((skill) => (
+                <div key={skill.name}>
+                  <p className="font-medium">{skill.name}</p>
+                  <p className="text-sm text-muted-foreground">{skill.description}</p>
                 </div>
               ))}
             </div>
@@ -143,29 +148,29 @@ export default async function Home() {
 
           <Card className="p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-green-500/50">
             <div className="flex items-center gap-2 mb-4">
-              <Database className="w-5 h-5 text-green-500" />
-              <h3 className="font-semibold">Backend</h3>
+              <Wrench className="w-5 h-5 text-green-500" />
+              <h3 className="font-semibold">Workflow & AI</h3>
             </div>
             <div className="space-y-3">
-              {techStack.backend.map((tech) => (
-                <div key={tech.name}>
-                  <p className="font-medium">{tech.name}</p>
-                  <p className="text-sm text-muted-foreground">{tech.description}</p>
+              {skills.workflow.map((skill) => (
+                <div key={skill.name}>
+                  <p className="font-medium">{skill.name}</p>
+                  <p className="text-sm text-muted-foreground">{skill.description}</p>
                 </div>
               ))}
             </div>
           </Card>
 
-          <Card className="p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-gray-500/50">
+          <Card className="p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-purple-500/50">
             <div className="flex items-center gap-2 mb-4">
-              <Wrench className="w-5 h-5 text-gray-500" />
-              <h3 className="font-semibold">Tools</h3>
+              <Database className="w-5 h-5 text-purple-500" />
+              <h3 className="font-semibold">Infrastructure</h3>
             </div>
             <div className="space-y-3">
-              {techStack.tools.map((tech) => (
-                <div key={tech.name}>
-                  <p className="font-medium">{tech.name}</p>
-                  <p className="text-sm text-muted-foreground">{tech.description}</p>
+              {skills.infrastructure.map((skill) => (
+                <div key={skill.name}>
+                  <p className="font-medium">{skill.name}</p>
+                  <p className="text-sm text-muted-foreground">{skill.description}</p>
                 </div>
               ))}
             </div>
@@ -173,14 +178,10 @@ export default async function Home() {
         </div>
       </section>
 
-      <Separator id="journey" className="scroll-mt-20" />
-
       {/* JOURNEY */}
-      <section className="space-y-6 animate-fade-in animate-delay-300">
+      <section id="journey" className="space-y-3 animate-fade-in animate-delay-300 scroll-mt-20">
+        <Separator />
         <h2 className="text-3xl font-semibold text-center">Journey</h2>
-        <p className="text-center text-muted-foreground">
-          Documenting what I learned, challenges I faced, and how I grew as a developer.
-        </p>
         <div className="grid md:grid-cols-2 gap-6 mt-6">
           {journeyPosts.map((post) => (
             <Card key={post.slug} className="p-6 space-y-2 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary/50">
@@ -205,30 +206,50 @@ export default async function Home() {
         )}
       </section>
 
-      <Separator id="contact" className="scroll-mt-20" />
-
       {/* CONTACT */}
-      <section className="text-center space-y-4 animate-fade-in animate-delay-300">
-        <h2 className="text-3xl font-semibold">Contact Me</h2>
-        <p className="text-muted-foreground">
-          Feel free to reach out via GitHub, LinkedIn, or email.
-        </p>
-        <div className="flex justify-center gap-4 mt-4">
-          <Button asChild>
-            <a href="mailto:youremail@example.com">Email</a>
+      <section id="contact" className="text-center space-y-4 animate-fade-in animate-delay-300 scroll-mt-20">
+        <Separator />
+        <h2 className="text-3xl font-semibold">Let&apos;s Build Your MVP</h2>
+        <div className="max-w-2xl mx-auto space-y-3">
+          <p className="text-muted-foreground">
+            Currently available for 2-3 week projects. Whether you need a rapid prototype
+            or a production-ready application, let&apos;s discuss bringing your idea to life.
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Interested in working together? Drop me an email and let&apos;s talk about your project.
+            Response time: Usually within 24 hours.
+          </p>
+        </div>
+        <div className="flex justify-center gap-4 mt-6">
+          <Button asChild size="lg">
+            <a href="mailto:youremail@example.com">Email Me</a>
           </Button>
-          <Button asChild variant="outline">
+          <Button asChild variant="outline" size="lg">
             <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
               GitHub
             </a>
           </Button>
-          <Button asChild variant="outline">
+          <Button asChild variant="outline" size="lg">
             <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
           </Button>
         </div>
       </section>
+
+      {/* FOOTER */}
+      <footer className="mt-32 pt-8 border-t text-center text-sm text-muted-foreground">
+        <p>
+          © 2025 Kris • Built with Next.js & AI-assisted workflows •{" "}
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+            GitHub
+          </a>{" "}
+          •{" "}
+          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+            LinkedIn
+          </a>
+        </p>
+      </footer>
 
     </main>
   );

@@ -23,9 +23,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="font-bold text-xl">DevTech</div>
             <div className="flex items-center gap-6">
               <ul className="flex gap-6">
-                <li><a href="#about" className="transition-colors hover:text-primary hover:underline underline-offset-4">About</a></li>
-                <li><a href="#skills" className="transition-colors hover:text-primary hover:underline underline-offset-4">Skills</a></li>
+                <li><a href="#about" className="transition-colors hover:text-primary hover:underline underline-offset-4">Home</a></li>
                 <li><a href="#projects" className="transition-colors hover:text-primary hover:underline underline-offset-4">Projects</a></li>
+                <li><a href="#skills" className="transition-colors hover:text-primary hover:underline underline-offset-4">Skills</a></li>
                 <li><a href="#journey" className="transition-colors hover:text-primary hover:underline underline-offset-4">Journey</a></li>
                 <li><a href="#contact" className="transition-colors hover:text-primary hover:underline underline-offset-4">Contact</a></li>
               </ul>
