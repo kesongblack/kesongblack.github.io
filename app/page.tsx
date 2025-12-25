@@ -43,7 +43,7 @@ export default async function Home() {
     <main className="max-w-6xl mx-auto px-6 py-16 space-y-32">
 
       {/* HERO */}
-      <section id="hero" className="text-center space-y-6 animate-fade-in py-12">
+      <section id="hero" className="text-center space-y-6 animate-fade-in py-12 scroll-mt-20">
         <div className="space-y-4">
           <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
             Ship Your MVP in Weeks, Not Months
@@ -76,7 +76,7 @@ export default async function Home() {
       </section>
 
       {/* PROJECTS - Immediate proof after value prop */}
-      <section id="projects" className="space-y-6 animate-fade-in animate-delay-100">
+      <section id="projects" className="space-y-6 animate-fade-in animate-delay-100 scroll-mt-20">
         <h2 className="text-3xl font-semibold text-center">Projects</h2>
         <div className="grid md:grid-cols-2 gap-6 mt-6">
           {projects.map((project) => (
@@ -123,7 +123,7 @@ export default async function Home() {
       <Separator />
 
       {/* TECH STACK */}
-      <section id="skills" className="space-y-6 animate-fade-in animate-delay-200">
+      <section id="skills" className="space-y-6 animate-fade-in animate-delay-200 scroll-mt-20">
         <h2 className="text-3xl font-semibold text-center">Tech Stack</h2>
         <div className="grid md:grid-cols-3 gap-6 mt-6">
           <Card className="p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-blue-500/50">
@@ -176,7 +176,7 @@ export default async function Home() {
       <Separator />
 
       {/* JOURNEY */}
-      <section id="journey" className="space-y-6 animate-fade-in animate-delay-300">
+      <section id="journey" className="space-y-6 animate-fade-in animate-delay-300 scroll-mt-20">
         <h2 className="text-3xl font-semibold text-center">Journey</h2>
         <p className="text-center text-muted-foreground">
           Documenting what I learned, challenges I faced, and how I grew as a developer.
@@ -208,7 +208,7 @@ export default async function Home() {
       <Separator />
 
       {/* CONTACT */}
-      <section id="contact" className="text-center space-y-4 animate-fade-in animate-delay-300">
+      <section id="contact" className="text-center space-y-4 animate-fade-in animate-delay-300 scroll-mt-20">
         <h2 className="text-3xl font-semibold">Contact Me</h2>
         <p className="text-muted-foreground">
           Feel free to reach out via GitHub, LinkedIn, or email.

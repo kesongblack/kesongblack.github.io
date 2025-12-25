@@ -124,6 +124,7 @@
   }
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* Offset for sticky navbar */
   }
   body {
     @apply bg-background text-foreground;
