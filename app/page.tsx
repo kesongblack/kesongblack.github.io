@@ -25,6 +25,16 @@ const techStack = {
   ],
 };
 
+export const metadata = {
+  title: "Kris | Full-Stack Developer Portfolio",
+  description: "I solve technical problems, build applications, and document what I learn along the way. Full-stack developer with Laravel and Next.js experience.",
+  openGraph: {
+    title: "Kris | Full-Stack Developer Portfolio",
+    description: "I solve technical problems, build applications, and document what I learn along the way.",
+    type: "website",
+  },
+};
+
 export default async function Home() {
   const projects = await getAllProjects();
   const journeyPosts = await getAllJourneyPosts();
